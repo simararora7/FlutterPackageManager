@@ -21,9 +21,11 @@ A native Android Studio plugin that manages `.iml` module files and `modules.xml
 
 ### From zip (recommended)
 
-1. Download `flutter-package-manager-1.0.0.zip` from the [latest release](../../releases/latest)
+1. Go to the [latest release](https://github.com/simararora7/FlutterPackageManager/releases/latest) and download `flutter-package-manager-1.0.0.zip`
 2. In Android Studio: **Settings → Plugins → ⚙ → Install Plugin from Disk…**
 3. Select the downloaded zip → **OK** → restart Android Studio
+
+> If you have a previous version installed, uninstall it first (Settings → Plugins) before installing the new one.
 
 ### From source
 
@@ -45,7 +47,7 @@ Install the zip from `build/distributions/` as described above.
 
 ### Settings
 
-**Settings → Tools → Flutter Module Manager**
+**Settings → Tools → Flutter Package Manager**
 
 - **Packages root** — override the auto-detected `packages/` path (leave blank for auto-detect)
 - **Reload** — re-scan the packages directory
