@@ -1,0 +1,57 @@
+<idea-plugin>
+  <id>com.simararora7.flutter-package-manager</id>
+  <name>Flutter Package Manager</name>
+  <vendor>Simar Arora</vendor>
+  <description><![CDATA[
+    Manage Android Studio .iml module files and modules.xml for Flutter monorepos.
+    <br><br>
+    Features:
+    <ul>
+      <li>Tool window with a searchable checkbox list of all packages</li>
+      <li>Check/uncheck packages to register/unregister them instantly</li>
+      <li>Status bar widget showing registered / total package count</li>
+      <li>Editor notification strip when navigating to an unregistered package</li>
+      <li>Auto-detects packages root from the open project</li>
+    </ul>
+  ]]></description>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+
+    <!-- Project-level settings (persisted in .idea/flutterModuleManager.xml) -->
+    <projectService
+        serviceImplementation="com.simararora7.flutterpackagemanager.services.ModuleManagerSettings"/>
+
+    <!-- Core project service: state, discovery, I/O -->
+    <projectService
+        serviceImplementation="com.simararora7.flutterpackagemanager.services.ModuleManagerService"/>
+
+    <!-- Settings page: Settings → Tools → Flutter Module Manager -->
+    <projectConfigurable
+        parentId="tools"
+        instance="com.simararora7.flutterpackagemanager.settings.ModuleManagerConfigurable"
+        id="com.simararora7.flutter-package-manager"
+        displayName="Flutter Package Manager"/>
+
+    <!-- Tool Window -->
+    <toolWindow
+        id="Flutter Packages"
+        anchor="right"
+        factoryClass="com.simararora7.flutterpackagemanager.toolwindow.ModulesToolWindowFactory"
+        doNotActivateOnStart="true"
+        icon="/icons/toolwindow.svg"/>
+
+    <!-- Status bar widget -->
+    <statusBarWidgetFactory
+        implementation="com.simararora7.flutterpackagemanager.statusbar.ModuleStatusBarWidgetFactory"
+        id="FlutterModuleManager"
+        order="last"/>
+
+    <!-- Editor notification strip for unregistered packages -->
+    <editorNotificationProvider
+        implementation="com.simararora7.flutterpackagemanager.notifications.UnregisteredPackageNotificationProvider"/>
+
+  </extensions>
+
+</idea-plugin>

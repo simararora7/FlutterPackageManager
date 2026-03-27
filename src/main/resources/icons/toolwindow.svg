@@ -1,0 +1,6 @@
+<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Three boxes arranged as a triangle: symbolises a package tree -->
+  <rect x="0.5" y="7.5" width="5" height="5" rx="0.5" stroke="#6E6E6E" stroke-width="1"/>
+  <rect x="7.5" y="7.5" width="5" height="5" rx="0.5" stroke="#6E6E6E" stroke-width="1"/>
+  <rect x="4" y="0.5" width="5" height="5" rx="0.5" stroke="#6E6E6E" stroke-width="1"/>
+</svg>
